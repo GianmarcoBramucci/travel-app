@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
+
 class TripController extends Controller
 {
     /**
@@ -12,7 +13,8 @@ class TripController extends Controller
      */
     public function index()
     {
-        //
+        $trips = Trip::all();
+        return view('trips.index',compact('trips'));
     }
 
     /**
@@ -20,7 +22,7 @@ class TripController extends Controller
      */
     public function create()
     {
-        //
+        return view('trips.create');
     }
 
     /**
@@ -28,23 +30,23 @@ class TripController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all;
+        $data['slug']= Trip::generateSlug($data['name']);
+        $newTrip = Trip::create($data);
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Trip $trip)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Trip $trip)
     {
-        //
+        return view('trips.edit');
     }
 
     /**
@@ -60,6 +62,7 @@ class TripController extends Controller
      */
     public function destroy(Trip $trip)
     {
-        //
+        $trip->delete();
+        return redirect()->route('trips.index') /*->with('message', $post->title . ' è stato eliminato')*/;
     }
 }

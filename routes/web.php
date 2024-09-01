@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TripController;
+use App\Http\Controllers\DayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [TripController::class, 'index']);
+Route::resource('trips', TripController::class)->parameters(['trips'=>'trip:slug']);
+Route::resource('days', DayController::class);
+
+
