@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Day;
+use App\Models\Stop;
 use Illuminate\Http\Request;
 
 class DayController extends Controller
@@ -12,7 +13,8 @@ class DayController extends Controller
      */
     public function index()
     {
-        //
+       
+      
     }
 
     /**
@@ -36,7 +38,8 @@ class DayController extends Controller
      */
     public function show(Day $day)
     {
-        //
+        $stops= Stop:: all()->where('day_id', $day->id);
+        return view('trips.days.show', compact('day', 'stops'));
     }
 
     /**

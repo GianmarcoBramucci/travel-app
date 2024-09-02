@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\DayController;
-
+use App\Http\Controllers\StopController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +18,7 @@ use App\Http\Controllers\DayController;
 Route::get('/', [TripController::class, 'index']);
 Route::resource('trips', TripController::class)->parameters(['trips'=>'trip:slug']);
 Route::resource('days', DayController::class);
+
+Route::resource('stops', StopController::class);
 
 

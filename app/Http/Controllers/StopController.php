@@ -20,7 +20,7 @@ class StopController extends Controller
      */
     public function create()
     {
-        //
+        return view('trips.days.stops.create');
     }
 
     /**
@@ -28,7 +28,10 @@ class StopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newStop = Stop::create($data);
+        
+        return redirect()->route('trips.index');
     }
 
     /**
@@ -36,7 +39,7 @@ class StopController extends Controller
      */
     public function show(Stop $stop)
     {
-        //
+        return view('trips.days.stops.edit');
     }
 
     /**

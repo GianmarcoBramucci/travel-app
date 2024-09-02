@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('arrival');
             $table->datetime('start_date');
             $table->datetime('end_date');
-            $table->time('duration');
+            $table->string('duration');
             $table->string('slug');
             $table->timestamps();
         });
