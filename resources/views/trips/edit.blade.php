@@ -3,7 +3,7 @@
 @section('content')
 <section class="container py-5">
     <div class="container rounded-2 container-table">
-        <h1 class="fw-bolder">Edit Apartment:</h1>
+        <h1 class="fw-bolder">Edit Trip:</h1>
         <h3>General Information</h3>
         <div id="ls-edit">
             <!-- Assume `trip` is the variable for the apartment being edited -->

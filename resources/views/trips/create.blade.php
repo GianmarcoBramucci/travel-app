@@ -5,7 +5,7 @@
 @section('content')
 <section class="container py-5">
     <div class="container rounded-2 container-table">
-        <h1 class="fw-bolder">Add a new Apartment:</h1>
+        <h1 class="fw-bolder">Add a new Trip:</h1>
         <h3>General informations</h3>
         <div id="ls-edit">
             <form action="{{ route('trips.store') }}" method="POST" enctype="multipart/form-data" id="create-apartment-form">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="text-center mx-auto justify-content-center d-flex gap-2">
-                    <button type="submit" class="btn-2 draw-border-2 p-2 px-3 mt-3 mx-3"><i class="fa-solid fa-plus"></i> Add the Apartment</button>
+                    <button type="submit" class="btn-2 draw-border-2 p-2 px-3 mt-3 mx-3"><i class="fa-solid fa-plus"></i> Add the Trip</button>
                 </div>
             </form>
         </div>
